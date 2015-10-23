@@ -2,6 +2,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -15,63 +16,31 @@ namespace UnifiedApiConnect.Helpers
     {
         static MediaTypeWithQualityHeaderValue Json = new MediaTypeWithQualityHeaderValue("application/json");
 
-        // Get infomation about the current logged in user.
-        public static async Task<UserInfo> GetUserInfoAsync(string accessToken)
-        {
-            UserInfo myInfo = new UserInfo();
 
-            using (var client = new HttpClient())
-            {
-                using (var request = new HttpRequestMessage(HttpMethod.Get, Settings.GetMeUrl))
-                {
-                    request.Headers.Accept.Add(Json);
-                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+        //public static async Task<Email> GetEmailsAsync(string accessToken, int limit)
+        //{
+        //    List<Email> EmailList = new List<Email>();
+            
+        //    using (var client = new HttpClient())
+        //    {
+        //        using (var request = new HttpRequestMessage(HttpMethod.Get, Settings.GetMailUrl))
+        //        {
+        //            request.Headers.Accept.Add(Json);
+        //            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-                    using (var response = await client.SendAsync(request))
-                    {
-                        if (response.StatusCode == HttpStatusCode.OK)
-                        {
-                            var json = JObject.Parse(await response.Content.ReadAsStringAsync());
-                            myInfo.Name = json?["displayName"]?.ToString();
-                            myInfo.Address = json?["mail"]?.ToString().Trim().Replace(" ", string.Empty);
-                            
-                        }
-                    }
-                }
-            }
+        //            using (var response = await client.SendAsync(request))
+        //            {
+        //                if (response.StatusCode == HttpStatusCode.OK)
+        //                {
+        //                    var json = JObject.Parse(await response.Content.ReadAsStringAsync());
+        //                    Emaillist.add(json?["Subject"]?.ToString());
+        //                }
+        //            }
+        //        }
+        //    }
 
-            return myInfo;
-        }
-
-        // Construct and send the message that the logged in user wants to send.
-        public static async Task<SendMessageResponse> SendMessageAsync(string accessToken, SendMessageRequest sendMessageRequest)
-        {
-            var sendMessageResponse = new SendMessageResponse { Status = SendMessageStatusEnum.NotSent };
-
-            using (var client = new HttpClient())
-            {
-                using (var request = new HttpRequestMessage(HttpMethod.Post, Settings.SendMessageUrl))
-                {
-                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                    request.Content = new StringContent(JsonConvert.SerializeObject(sendMessageRequest), Encoding.UTF8, "application/json");
-                    using (HttpResponseMessage response = await client.SendAsync(request))
-                    {
-                        if (response.IsSuccessStatusCode)
-                        {
-                            sendMessageResponse.Status = SendMessageStatusEnum.Sent;
-                            sendMessageResponse.StatusMessage = null;
-                        }
-                        else
-                        {
-                            sendMessageResponse.Status = SendMessageStatusEnum.Fail;
-                            sendMessageResponse.StatusMessage = response.ReasonPhrase;
-                        }
-                    }
-                }
-            }
-
-            return sendMessageResponse;
-        }            
+        //    return Emaillist;
+        //}
 
     }
 }

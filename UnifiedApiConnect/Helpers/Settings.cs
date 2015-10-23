@@ -15,6 +15,7 @@ namespace UnifiedApiConnect.Helpers
 
         public static string SendMessageUrl = @"https://graph.microsoft.com/beta/me/sendmail";
         public static string GetMeUrl = @"https://graph.microsoft.com/beta/me";
+        public static string GetMailUrl = @"https://graph.microsoft.com/beta/messages";
         public static string MessageBody => ConfigurationManager.AppSettings["MessageBody"];
         public static string MessageSubject => ConfigurationManager.AppSettings["MessageSubject"];
     }
