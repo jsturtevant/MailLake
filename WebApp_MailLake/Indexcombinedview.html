@@ -21,9 +21,9 @@
     <script src="Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
-        <header>
+    <header>
         <h1 class="ms-font-su">Welcome to a better expereince.</h1>
-        </header>
+    </header>
 
     <div class="body-content">
         <div class="row">
@@ -31,50 +31,30 @@
                 <div id="vis"></div>
                 <div id="status" class="hide"></div>
                 <!--<div id="controls"> </div>-->
-                </div>
-                <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
 
-                    <div class="ms-List" ng-controller="bubController" >
-                        <div class="ms-ListItem" ng-repeat="item in MailItems">
-                            <span class="ms-ListItem-primaryText">{{item.from}}</span>
-                            <span class="ms-ListItem-secondaryText">{{item.subject}}</span>
-                            <span class="ms-ListItem-tertiaryText">{{item.preview}}</span>
-                            <span class="ms-ListItem-metaText">10:15a</span>
-                            <div class="ms-ListItem-actions">
-                                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--attachment"></i></div>
-                                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
-                                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
-                            </div>
-                        </div>
-                        
-                            </div>
-                        </div>
-                        <div class="ms-ListItem">
-                            <span class="ms-ListItem-primaryText">Satya Nadella</span>
-                            <span class="ms-ListItem-secondaryText">Office UI Fabric Rocks!</span>
-                            <span class="ms-ListItem-tertiaryText">Congrats on a fantastic release helping developers build apps that look like Office!</span>
-                            <span class="ms-ListItem-metaText">10:15a</span>
-                            <div class="ms-ListItem-actions">
-                                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--attachment"></i></div>
-                                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
-                                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
-                            </div>
-                        </div>
-                        <div class="ms-ListItem">
-                            <span class="ms-ListItem-primaryText">Satya Nadella</span>
-                            <span class="ms-ListItem-secondaryText">Office UI Fabric Rocks!</span>
-                            <span class="ms-ListItem-tertiaryText">Congrats on a fantastic release helping developers build apps that look like Office!</span>
-                            <span class="ms-ListItem-metaText">10:15a</span>
-                            <div class="ms-ListItem-actions">
-                                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--attachment"></i></div>
-                                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
-                                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
-                            </div>
+                <div class="ms-List" ng-controller="bubController">
+                    <div class="ms-ListItem" ng-repeat="item in MailItems">
+                        <span class="ms-ListItem-primaryText">{{item.from}}</span>
+                        <span class="ms-ListItem-secondaryText">{{item.subject}}</span>
+                        <span class="ms-ListItem-tertiaryText">{{item.preview}}</span>
+                        <span class="ms-ListItem-metaText">10:15a</span>
+                        <div class="ms-ListItem-actions">
+                            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--attachment"></i></div>
+                            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                            <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
                         </div>
                     </div>
 
 
+
+
                 </div>
+            </div>
+
+
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <div id="controls">
@@ -88,14 +68,14 @@
         </div>
     </div>
 
-            <footer>
-                <p>
-                    Based on<a href="http://vallandingham.me/building_a_bubble_cloud.html">
-                        @vlandham
-                    </a> | <a href="https://github.com/vlandham/bubble_cloud">Source Code</a> | <a href="http://www.nytimes.com/interactive/2012/09/04/us/politics/democratic-convention-words.html">Original Inspiration</a>
-                </p>
-            </footer>
-        </div>
+    <footer>
+        <p>
+            Based on<a href="http://vallandingham.me/building_a_bubble_cloud.html">
+                @vlandham
+            </a> | <a href="https://github.com/vlandham/bubble_cloud">Source Code</a> | <a href="http://www.nytimes.com/interactive/2012/09/04/us/politics/democratic-convention-words.html">Original Inspiration</a>
+        </p>
+    </footer>
+    </div>
 
     <script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.1.min.js"><\/script>')</script>
 
