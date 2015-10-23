@@ -31,15 +31,15 @@ namespace UnifiedApiConnect.Controllers
             EnsureUser(ref userInfo);
 
             // Send email using O365 unified API.
-            var sendMessageResult = await UnifiedApiHelper.SendMessageAsync(
-                (string)Session[SessionKeys.Login.AccessToken],  
-                GenerateEmail(userInfo));
+            //var sendMessageResult = await UnifiedApiHelper.SendMessageAsync(
+            //    (string)Session[SessionKeys.Login.AccessToken],  
+            //    GenerateEmail(userInfo));
 
             // Reuse the Index view for messages (sent, not sent, fail) .
             // Redirect to tell the browser to call the app back via the Index method.
             return RedirectToAction(nameof(Index), new RouteValueDictionary(new Dictionary<string,object>{
-                { "Status", sendMessageResult.Status },
-                { "StatusMessage", sendMessageResult.StatusMessage },
+                { "Status", "" },
+                { "StatusMessage", "" },
                 { "Address", userInfo.Address },
             }));
         }

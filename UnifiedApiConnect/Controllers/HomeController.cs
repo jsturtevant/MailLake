@@ -69,7 +69,7 @@ namespace UnifiedApiConnect.Controllers
             Session[SessionKeys.Login.AccessToken] = authResult.AccessToken;
 
             // Get info about the current logged in user.
-            Session[SessionKeys.Login.UserInfo] = await UnifiedApiHelper.GetUserInfoAsync(authResult.AccessToken);
+            //Session[SessionKeys.Login.UserInfo] = await UnifiedApiHelper.GetUserInfoAsync(authResult.AccessToken);
 
             return RedirectToAction(nameof(Index), "Message");
             

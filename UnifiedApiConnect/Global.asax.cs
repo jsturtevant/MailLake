@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using UnifiedApiConnect.App_Start;
 
 namespace UnifiedApiConnect
 {
@@ -16,7 +17,7 @@ namespace UnifiedApiConnect
         {
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
-           
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
             RouteConfig.RegisterRoutes(RouteTable.Routes);            
         }
     }
