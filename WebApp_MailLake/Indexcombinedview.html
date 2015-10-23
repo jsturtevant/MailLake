@@ -22,7 +22,7 @@
 </head>
 <body>
     <header>
-        <h1 class="ms-font-su">Welcome to a better expereince.</h1>
+        <h1 class="ms-font-su">Welcome to a better experience.</h1>
     </header>
 
     <div class="body-content">
@@ -34,7 +34,7 @@
             </div>
             <div class="col-md-6">
 
-                <div class="ms-List" ng-controller="bubController">
+                <div id="bubController" class="ms-List" ng-controller="bubController">
                     <div class="ms-ListItem" ng-repeat="item in MailItems">
                         <span class="ms-ListItem-primaryText">{{item.from}}</span>
                         <span class="ms-ListItem-secondaryText">{{item.subject}}</span>
@@ -83,8 +83,8 @@
     <script src="Scripts/angular.js"></script>
     <script defer src="js/plugins.js"></script>
     <script src="Scripts/d3/d3.js"></script>
-    <script type="text/javascript" src="dataviz/vis.js"></script>
     <script src="js/controllers.js"></script>
+    <script type="text/javascript" src="dataviz/vis.js"></script>
 
 </body>
 </html>

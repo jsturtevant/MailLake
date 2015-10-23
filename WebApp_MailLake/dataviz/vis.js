@@ -102,11 +102,12 @@ Bubbles = function() {
     labelEnter.append("div").attr("class", "bubble-label-name").text(function(d) {
       return textValue(d);
     });
+    /*
     labelEnter.append("div").attr("class", "bubble-label-value").text(function(d) {
       return rValue(d);
-    });
+    });*/
     label.style("font-size", function(d) {
-      return Math.max(8, rScale(rValue(d) / 2)) + "px";
+        return "16px";//Math.max(8, rScale(rValue(d) / 2)) + "px";
     }).style("width", function(d) {
       return 2.5 * rScale(rValue(d)) + "px";
     });
@@ -177,7 +178,8 @@ Bubbles = function() {
       return id === idValue(d);
     });
     if (id.length > 0) {
-
+        angular.element(document.getElementById('bubController')).scope().UpdateMailItems(id);
+        angular.element(document.getElementById('bubController')).scope().$apply();
       return d3.select("#status").html("<h3>  <span class=\"active\">" + id + "</span> is now being viewed</h3>");
     } else {
       return d3.select("#status").html("<h3>Drag Email to the top to view content </h3>");
@@ -230,7 +232,7 @@ root.plotData = function(selector, data, plot) {
 texts = [
   {
     key: "sherlock",
-    file: "top_sherlock.csv",
+    file: "alice.csv",
     name: "Email Group One"
   }, {
     key: "aesop",
