@@ -139,6 +139,7 @@
     <Compile Include="Helpers\SessionKeys.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\UnifiedApiHelper.cs" />
+    <Compile Include="Models\email.cs" />
     <Compile Include="Models\UnifiedApiMessageModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
