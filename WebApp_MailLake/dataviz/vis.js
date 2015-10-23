@@ -177,6 +177,7 @@ Bubbles = function() {
       return id === idValue(d);
     });
     if (id.length > 0) {
+
       return d3.select("#status").html("<h3>  <span class=\"active\">" + id + "</span> is now being viewed</h3>");
     } else {
       return d3.select("#status").html("<h3>Drag Email to the top to view content </h3>");
