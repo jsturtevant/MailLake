@@ -124,6 +124,7 @@
     <None Include="Properties\PublishProfiles\aspnetmvc2 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\aspnetmvc2 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\aspnetmvc2.pubxml" />
+    <None Include="Properties\PublishProfiles\MailLake10.pubxml" />
     <None Include="Properties\PublishProfiles\mvctry.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
