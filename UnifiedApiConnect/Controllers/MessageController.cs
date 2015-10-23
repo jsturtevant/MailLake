@@ -64,46 +64,6 @@ namespace UnifiedApiConnect.Controllers
                 userInfo.Name = userInfo.Address;
             }
         }
-
-        // Create email with predefine body and subject.
-        SendMessageRequest GenerateEmail(UserInfo to)
-        {
-            return CreateEmailObject(
-                to: to,
-                subject: Settings.MessageSubject,
-                body: string.Format(Settings.MessageBody, to.Name)
-            );
-        }
-
-        // Create email object in the required request format/data contract.
-        private SendMessageRequest CreateEmailObject(UserInfo to, string subject, string body)
-        {
-            return new SendMessageRequest
-            {
-                Message = new Message
-                {
-                    Subject = subject,
-                    Body = new MessageBody
-                    {
-                        ContentType = "Html",
-                        Content = body
-                    },
-                    ToRecipients = new List<Recipient>
-                    {
-                        new Recipient
-                        {
-                            EmailAddress = new UserInfo
-                            {
-                                 Name =  to.Name,
-                                 Address = to.Address
-                            }
-                        }
-                    }
-                },
-                SaveToSentItems = true
-            };
-        }
-
     }
 }
 

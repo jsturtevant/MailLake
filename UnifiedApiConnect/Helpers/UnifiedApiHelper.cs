@@ -33,13 +33,13 @@ namespace UnifiedApiConnect.Helpers
         //                if (response.StatusCode == HttpStatusCode.OK)
         //                {
         //                    var json = JObject.Parse(await response.Content.ReadAsStringAsync());
-        //                    Emaillist.add(json?["Subject"]?.ToString());
+        //                    EmailList.add(json?["Subject"]?.ToString());
         //                }
         //            }
         //        }
         //    }
 
-        //    return Emaillist;
+        //    return EmailList;
         //}
 
     }

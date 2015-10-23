@@ -20,4 +20,10 @@ namespace UnifiedApiConnect.Models
         public int groupid { get; set; }
         public string groupname { get; set; }
     }
+
+    public class EmailList
+    {
+        public IEnumerable<Email> emails { get; set; }
+    }
+
 }
